@@ -1,0 +1,164 @@
+photos :
+
+
+Problem statement
+Introduction
+Possible Approaches
+Algorithm used
+Conclusions and future work
+references
+
+
+
+various types of algo..
+explain the algorithm..
+add some extra steps , other than present in paper..
+try to explain in simple word which will be easy to understand..
+
+why is there a need to compress...
+output explain
+
+future work...
+
+
+
+pages..
+cover page
+index page (sections and subsections)
+
+
+sections to be involved..
+problem statement
+Introduction 
+method used or approach used
+	explain algos here
+
+results
+
+conclusion and future work
+references and resources
+
+
+Certainly! Based on the information provided in the paper, I can summarize the proposed PMU data compression technique step by step:
+
+**Step 1: Data Collection**
+   - The process starts with the collection of Phasor Measurement Unit (PMU) data from various sources in a wide-area monitoring system (WAMS).
+
+**Step 2: Temporal Redundancy Reduction Using PCA**
+   - Principal Component Analysis (PCA) is applied to the collected PMU data. PCA helps in reducing the temporal redundancy within individual PMU data streams.
+   - PCA transforms the original data into a set of Principal Components (PCs), which are linear combinations of the original variables. These PCs capture the dominant variations in the data.
+
+**Step 3: PC Selection**
+   - To determine which PCs to retain and which to discard, the authors use root mean square error (RMSE) and maximum absolute deviation error (MADE) thresholds.
+   - PCs are retained until the RMSE and MADE remain below predefined stringent limits.
+   - The selection of the number of PCs (Q) is guided by the normalized cumulative variance, ensuring that a significant portion of the variance is retained (e.g., ≥ 0.8 for normal data, ≥ 0.95 for disturbance data).
+
+**Step 4: Further Temporal Redundancy Reduction Using DCT and DWT**
+   - After PCA, the PCs are transformed into a reduced-dimensional subspace.
+   - To further reduce temporal redundancy, two compression algorithms, Discrete Cosine Transform (DCT) and Discrete Wavelet Transform (DWT), are applied to the PCs.
+   - DCT converts the data into a transform domain using cosine basis functions. Insignificant coefficients with small magnitudes are discarded based on a cumulative energy threshold (ν).
+   - DWT maps the data to a transform domain using wavelets, with the db1 wavelet found to be suitable. Thresholds based on cumulative energy (ν) are used to retain or discard coefficients.
+
+**Step 5: Compression Thresholds**
+   - For both DCT and DWT compression, the choice of thresholds for ν is crucial to maintain data fidelity while reducing redundancy.
+   - Threshold values are set to ensure that the RMSE and MADE remain below specific limits (e.g., ν ≥ 0.9 for normal data, ν ≥ 0.95 for disturbance data).
+
+**Step 6: Data Reconstruction**
+   - The retained DCT and DWT coefficients, along with the selected PCs, are used to reconstruct the compressed PMU data.
+
+**Step 7: Data Storage and Transmission**
+   - The compressed data, which is now in a reduced-dimensional form, can be efficiently stored and transmitted within the wide-area monitoring system.
+   - This step ensures that the storage and transmission of PMU data are more efficient without significant loss of critical information, making it suitable for real-time applications and archival purposes.
+
+In summary, the proposed PMU data compression technique involves reducing both spatial and temporal redundancies in the data. It uses PCA to address spatial redundancy, followed by DCT and DWT algorithms to further reduce temporal redundancy. The selection of PCs and compression thresholds is guided by stringent error limits to maintain data fidelity. This approach aims to make the storage and transmission of PMU data more efficient while ensuring that critical information is preserved.
+
+
+
+Statistical Change Detection (SCD):
+The process starts with statistical change detection to identify disturbances in the power system.
+PMUs continuously record data, and SCD is applied to detect deviations from normal operating conditions.
+Disturbances are detected based on criteria like voltage and frequency thresholds. When deviations exceed these thresholds, it indicates a disturbance.
+The goal is to preserve critical changes in PMU measurements during disturbances.
+
+Adaptive Window Length Selection:
+After detecting a disturbance, an adaptive window length is selected to capture disturbance details with higher fidelity.
+Traditional fixed window lengths of 10 seconds are used for normal data. However, during disturbances, a more extended window is chosen.
+The length of the window depends on the nature and duration of the disturbance.
+The window length selection ensures that even short disturbances are captured with higher fidelity.
+
+Principal Component Analysis (PCA):
+PCA is used to transform the multidimensional PMU data into a lower-dimensional subspace.
+It identifies the principal components (PCs) that explain the maximum variance in the data.
+PCs are linear combinations of the original variables and capture the essential information in the data.
+PCA helps reduce the dimensionality of the data while retaining critical information.
+Discrete Cosine Transform (DCT) and Discrete Wavelet Transform (DWT):
+
+To further reduce redundancy in the time-series data represented by the PCs, compression algorithms like DCT and DWT are applied.
+DCT converts the data into a domain based on cosine basis functions, while DWT maps the data into a domain with various wavelets.
+These transforms often result in sparse representations of data, with some coefficients carrying negligible information.
+Insignificant coefficients are discarded based on predefined threshold values, reducing data size while maintaining fidelity.
+
+Cumulative Energy-Based Thresholds:
+Thresholds are determined based on the cumulative energy of coefficients in the transformed domains.
+Coefficients with small cumulative energy are considered insignificant and can be safely discarded without affecting the fidelity of the data.
+
+Final Lossless Compression:
+After applying PCA, DCT, and DWT-based compression, a classical lossless compression technique is applied to further reduce data size.
+Lossless compression ensures that the original data can be perfectly reconstructed when needed.
+
+Performance Metrics:
+Several performance metrics are used to evaluate the effectiveness of compression, including Compression Ratio (CR), Root Mean Square Error (RMSE), and Maximum Absolute Deviation Error (MADE).
+CR quantifies the reduction in data size, while RMSE and MADE measure the fidelity of the compressed data compared to the original.
+By combining these methods, PMU data compression achieves a balance between data size reduction and the preservation of critical information, making it more manageable and cost-effective for storage, transmission, and analysis in Wide Area Monitoring Systems (WAMS).
+
+
+________________________________________________________________________________
+Talking of the algorithm  :
+
+following this link : https://www.youtube.com/watch?v=QdBy02ExhGI&ab_channel=KrishNaik
+
+https://builtin.com/data-science/step-step-explanation-principal-component-analysis
+
+
+
+ * our data set has lot of columns 
+that is multiple buses with each bus having 3 parameters:
+so total of 3n parameters or 3n dimensions are there ..
+
+first steP : should be to do scaling... (Standardisations) (refer from some article) ...
+https://builtin.com/data-science/step-step-explanation-principal-component-analysis
+
+
+
+
+
+
+
+
+images to be included : dry that in word
+
+pca images..
+add equations...
+
+
+
+Probblem statement
+Introduction
+Possible Approaches
+Algorithm Used
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

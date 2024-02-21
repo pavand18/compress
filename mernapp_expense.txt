@@ -1,0 +1,47 @@
+express js is basically a framework of node js , it wiil hellp us to use rest apis.
+
+we will run our application usig nodemonn..
+
+npm i express colors morgan dotenv nodemon cors
+* understand the use of all the dependencies, which i have installed above..
+
+using scripts which are there in our package.json file , it will help us 
+to run the client and server as mentioned in oour package.json file..
+
+what is middlewares
+
+to run the server : 
+npx nodemon server.js
+npm run server.js
+
+where server.js is the main file
+as written in the package.jsonn file
+
+
+
+what is mvc ??
+
+inorder to create our new database for our new project 
+just open mongodb atlas then database , then browssse collections , in that
+we have to tap on create database in that we can crreate a new database...
+
+now we can add data manualy , but we will choose to add it through our backend..
+we will connect backend with mongodb
+then create a crud operation
+
+to connect what we do is go in overview then connect it using
+mongodb compass : then change the url and add that url to .env file 
+also connect compass using the same url
+
+
+above is not the method to connect mongodb with backend ..
+it is done with the help of moongoose , it is also helpful in creating schemas
+and also to create crud operations
+
+
+after connecting database with the bbackend..
+we will create a user schmea in userModel.js
+
+
+
+
